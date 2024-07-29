@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sorting.css" />
+    <link rel="stylesheet" href="base_sort.css" />
+
+    <title>Sorting Visualizer</title>
+  </head>
+
+  <body>
+    <h1>SORTING VISUALIZER</h1>
+    <div class="nav-container">
+      <h1 class="title" onclick="window.location.reload()">
+        
+      </h1>
+      <div class="navbar" id="navbar">
+        <a id="random" onclick="RenderScreen()">Generate array</a>
+        <span class="options">
+          <select name="select sort algorithm" id="menu" class="algo-menu">
+            <option value="0">Choose algorithm</option>
+            <option value="1">Bubble Sort</option>
+            <option value="2">Selection Sort</option>
+            <option value="3">Insertion Sort</option>
+            <option value="4">Merge Sort</option>
+            <option value="5">Quick Sort</option>
+          </select>
+        </span>
+        <span class="options">
+          <select name="select array size" id="menu" class="size-menu">
+            <option value="0">Array size</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
+          </select>
+        </span>
+        <span class="options">
+          <select name="speed of visualization" id="menu" class="speed-menu">
+            <option value="0">Speed</option>
+            <option value="0.5">0.50x</option>
+            <option value="0.75">0.75x</option>
+            <option value="1">1.00x</option>
+            <option value="2">2.00x</option>
+            <option value="4">4.00x</option>
+          </select>
+        </span>
+        <a class="start">Sort</a>
+        <a class="icon"><i class="fa fa-bars"></i></a>
+      </div>
+    </div>
+    <div class="center">
+      <div class="array">Select Array Size</div>
+    </div>
+    <br />
+    <!-- Algorithm Information -->
+    <div class="algorithm-info container">
+      <h2 class="algorithm-name">Sorting Algorithms</h2>
+      <hr />
+      <p class="algorithm-description">
+        Sorting algorithms are used to sort a data structure according to a
+        specific order relationship, such as numerical order or lexicographical
+        order. <br />
+
+        This operation is one of the most important and widespread in computer
+        science. For a long time, new methods have been developed to make this
+        procedure faster and faster. <br />
+
+        There are currently hundreds of different sorting algorithms, each with
+        its own specific characteristics. They are classified according to two
+        metrics: space complexity and time complexity. <br />
+
+        Those two kinds of complexity are represented with asymptotic notations,
+        mainly with the symbols O, Θ, Ω, representing respectively the upper
+        bound, the tight bound, and the lower bound of the algorithm's
+        complexity, specifying in brackets an expression in terms of n, the
+        number of the elements of the data structure. <br />
+
+        Most of them fall into two categories: <br /><br />
+
+        &#x2022; <strong>Logarithmic</strong> <br />
+        The complexity is proportional to the binary logarithm (i.e to the base
+        2) of n. <br />
+        An example of a logarithmic sorting algorithm is Quick sort, with space
+        and time complexity O(n × log n). <br /><br />
+        &#x2022; <strong>Quadratic</strong> <br />
+        The complexity is proportional to the square of n. <br />
+        An example of a quadratic sorting algorithm is Bubble sort, with a time
+        complexity of O(n2). <br />
+        Space and time complexity can also be further subdivided into 3
+        different cases: best case, average case and worst case. <br />
+
+        Sorting algorithms can be difficult to understand and it's easy to get
+        confused. We believe visualizing sorting algorithms can be a great way
+        to better understand their functioning while having fun!
+      </p>
+      <div class="row">
+        <div class="col-md-6" style="border-right: 1px solid #888">
+          <p class="time-complexity"></p>
+        </div>
+        <div class="col-md-6">
+          <p class="space-complexity"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer starts -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p style="text-align: justify">
+              Sorting Visualizer is a web application designed to better
+              understand sorting algorithms by displaying and visualizing them.
+              In the website you can find information and implementations in
+              multiple programming languages of more than 5 sorting algorithms,
+              categorized by their time and space complexity.
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <a href="https://murghendra-portfolio.vercel.app/"> 
+              <i class="fas fa-globe"></i> Portfolio</a
+            ><br />
+            <a href="mailto:murghendraakki10@gmail.com">
+              <i class="fas fa-envelope"></i> Mail me</a
+            ><br />
+            <a href="https://github.com/Murghendra">
+              <i class="fab fa-github"></i> GitHub</a
+            ><br />
+            <a href="https://www.linkedin.com/in/murghendra-akki-8667a6273/">
+              <i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </div>
+
+          <div class="col-sm-6 col-md-3">
+            <h6 class="connect">CONNECT</h6>
+            <ul class="social-icons">
+              <!-- <li>
+                <a
+                  class="facebook"
+                  href="https://www.facebook.com/Mohit997"
+                  target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </li> -->
+              <!-- <li>
+                <a
+                  class="twitter"
+                  href=""
+                  target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li> -->
+              <li>
+                <a
+                  class="github"
+                  href="https://github.com/Murghendra"
+                  target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="linkedin"
+                  href="https://www.linkedin.com/in/murghendra-akki-8667a6273/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright-text">
+      <p>
+        &copy;2023 - Sorting Visualizer <br />
+        Made by
+        <a
+          href="https://www.linkedin.com/in/murghendra-akki-8667a6273/"
+          style="text-decoration: none"
+          >Murghendra</a
+        >
+      </p>
+    </div>
+    <!--footer ends-->
+
+    <script src="js_files/app.js"></script>
+    <script src="js_files/helper.js"></script>
+    <script src="js_files/sort-algorithms.js"></script>
+    <script src="js_files/base_sort.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

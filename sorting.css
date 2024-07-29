@@ -1,0 +1,412 @@
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #16a085;
+}
+
+* {
+  /* Below is the standard CSS code one should add to get rid of default margins and padding which most of tge HTML elements have */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+h1{
+  color: #5776ff; /* Change this color code to the desired color */
+
+}
+
+body {
+  
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #001c2a;
+  /* background-image: url("https://sortvisualizer.com/static/css/sortbg.jpg"); */
+  background-size: contain;
+}
+
+/* Title CSS */
+.title {
+  /* background-color: #ececec; */
+  background-image: url("img/bg-middle.jpg");
+  text-align: center;
+  font-size: 1.5em;
+  padding-block: 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+img {
+  width: 200px;
+}
+
+/* Navbar CSS */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  font-size: 16px;
+  min-height: 70px;
+  padding-block: 0.6em;
+  margin-bottom: 5px;
+  /* background-color: #2a6e8a; */
+  background-image: url("img/bg2.jpg");
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.navbar a {
+  all: unset;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: #49b2c7;
+}
+
+.navbar a:hover {
+  background-color: #007bb6;
+}
+
+.navbar #menu {
+  width: fit-content;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  background-color: #49b2c7;
+  color: white;
+}
+
+.navbar > .icon {
+  display: none;
+}
+
+#menu,
+#random,
+#start {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Center css */
+.center {
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  /* Added shadow to make page border free */
+  height: 420px;
+  width: 642px;
+  max-height: 731px;
+  /* background-color: #eceeef; */
+  background-image: url("img/bg-middle.jpg");
+}
+
+.array {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  flex-direction: row;
+  text-align: center;
+}
+
+.cell {
+  display: flex;
+  align-items: flex-start;
+  flex: 0.5;
+  width: 0.000001%;
+  margin: 1px;
+  background-color: rgb(138, 132, 132);
+  resize: horizontal;
+  position: relative;
+  transition: all 0.4s ease-in;
+}
+
+.cell.done {
+  background-color: #9cec5b;
+  border-color: #9cec5b;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+
+.cell.visited {
+  border-color: #6184d8;
+  background-color: #6184d8;
+  color: white;
+  transition: 0.5s;
+}
+
+.cell.current {
+  border-color: #50c5b7;
+  background-color: #50c5b7;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+
+.cell.min {
+  background-color: #ff1493;
+  border-color: #ff1493;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+
+/* Algorithm Info CSS */
+.algorithm-info {
+  /* display: none; */
+  background-image: url("img/bg-middle.jpg");
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.algorithm-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.algorithm-description {
+  font-size: 16px;
+  /* margin-top: 4px;
+  margin-bottom: 10px; */
+  margin: 20px;
+  text-align: justify;
+}
+
+.time-complexity,
+.space-complexity {
+  font-size: 14px;
+  margin: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Footer CSS */
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 30px;
+  color: #737373;
+}
+
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+
+.site-footer hr.small {
+  margin: 20px 0;
+}
+
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.site-footer a {
+  color: #737373;
+  text-decoration: none;
+  text-align: justify;
+}
+
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  display: block;
+}
+
+.footer-links a {
+  color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links.inline li {
+  display: inline-block;
+}
+
+.connect {
+  align-content: center;
+  padding-bottom: 8px;
+}
+
+.site-footer .social-icons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+
+.social-icons {
+  align-items: center;
+}
+
+.copyright-text {
+  margin: 0;
+  background-color: #1b1b1f;
+  padding-top: 6px;
+  color: lightslategrey;
+  font-size: small;
+}
+
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+
+.social-icons a.github:hover {
+  background-color: #ea4c89;
+}
+
+@media (max-width: 767px) {
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    gap: 0.4em;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .navbar *,
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+
+  a#random {
+    order: 4;
+  }
+
+  a.start {
+    order: 5;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .center {
+    width: 95%;
+  }
+}
